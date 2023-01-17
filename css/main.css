@@ -1,0 +1,1913 @@
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap");
+@import url("//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+
+/* 共通配色 */
+:root {
+    --main_Color: #859c00;
+    --sub_Color1: #e8528e;
+    --sub_Color2: #ff9934;
+    --caution_Color: #ff3c66;
+    --background_Color: #f1f2f6;
+    --accent_Color: #aaa;
+    --transition: cubic-bezier(0.19, 1, 0.22, 1) 0.25s;
+    --cursor_pointer: url(/cursor/miku\ ポインター.cur), pointer;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    cursor: url(/cursor/miku\ デフォルト.cur), default;
+    font-family: "Kaisei Opti", serif;
+    scrollbar-color: var(--main_Color) #ccc;
+    scrollbar-width: thin;
+}
+
+*::selection {
+    color: #fff;
+    background-color: var(--main_Color);
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    height: auto;
+}
+
+body {
+    display: block;
+    background-color: var(--background_Color);
+    width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--main_Color);
+    text-decoration: none;
+    cursor: var(--cursor_pointer);
+}
+
+.container {
+    width: 100%;
+    height: auto;
+}
+
+.section_Line {
+    border-top: #aaa solid 1px;
+    width: 100%;
+    height: 0;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.caution {
+    color: var(--caution_Color);
+    width: fit-content;
+    font-weight: bold;
+    text-decoration: underline;
+    background-color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main_Color);
+    border-radius: 10px;
+}
+
+@media (min-width: 1010px) {
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a img:hover {
+        filter: brightness(1.25);
+        cursor: var(--cursor_pointer);
+    }
+}
+@media (max-width: 1010px) {
+    a:active {
+        text-decoration: underline;
+    }
+
+    a img:active {
+        filter: brightness(1.25);
+        cursor: var(--cursor_pointer);
+    }
+}
+
+/*         */
+/* ヘッダー */
+/*         */
+iframe.header {
+    box-shadow: rgba(0, 0, 0, 0.363) 0 0 10px;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    border: none;
+}
+header {
+    position: relative;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.363) 0 0 10px;
+    overflow-x: hidden;
+}
+header .header-Menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+header .logo {
+    text-transform: uppercase;
+    color: var(--main_Color);
+    display: inline-block;
+    cursor: var(--cursor_pointer);
+}
+header .logo a {
+    display: block;
+    width: 200px;
+    height: 40px;
+}
+header .logo a:hover {
+    text-decoration: none;
+}
+header .logo a img {
+    width: 200px;
+    height: auto;
+}
+header .header_Search_Container {
+    position: relative;
+    border: 1px solid #999;
+    padding: 3px 10px;
+    border-radius: 5px;
+    height: 2.3em;
+    min-width: 200px;
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+}
+header .header_Search_Container input[type="search"] {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+header .header_Search_Container input[type="search"]:focus {
+    outline: none;
+}
+header .header_Search_Container button {
+    cursor: var(--cursor_pointer);
+    border: none;
+    background: var(--main_Color);
+    color: #fff;
+    position: absolute;
+    width: 3.5em;
+    height: 3em;
+    right: 0px;
+    top: -3px;
+    outline: none;
+    transition: var(--transition);
+}
+header .header_Search_Container button i {
+    cursor: var(--cursor_pointer);
+}
+header .header-Menu {
+    width: 300px;
+    min-width: 300px;
+    justify-content: right;
+}
+header .header-Menu label {
+    margin: auto 5px;
+}
+header .header-Menu label a {
+    display: inline-block;
+    padding: 0px 10px;
+    text-align: center;
+    line-height: 32px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: #ccc solid 1px;
+    color: #666;
+}
+header .header-Menu label button {
+    display: inline-block;
+    padding: 0px 10px;
+    text-align: center;
+    line-height: 32px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: #ccc solid 1px;
+    color: #666;
+    font-size: medium;
+    cursor: var(--cursor_pointer);
+    transition: var(--transition);
+}
+header .header-Menu label a:hover {
+    text-decoration: none;
+}
+header .header-Link {
+    margin-right: 20px;
+}
+@media (min-width: 1010px) {
+    header .header_Search_Container button:hover {
+        background-color: var(--sub_Color2);
+    }
+}
+@media (max-width: 1010px) {
+    header {
+        padding: 20px 50px;
+    }
+    header .header_Search_Container {
+        min-width: 200px;
+        width: 90%;
+        max-width: 500px;
+    }
+    header .header-Menu {
+        display: none;
+    }
+    header .header_Search_Container button:active {
+        background-color: var(--sub_Color2);
+    }
+}
+@media (max-width: 680px) {
+    iframe.header {
+        height: 122px;
+    }
+    header {
+        display: block;
+        text-align: center;
+        padding: 20px 30px;
+    }
+    header .header_Search_Container {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+/* メインコンテンツ */
+main.wrapper {
+    position: relative;
+    width: 1000px;
+    min-height: 100vh;
+    height: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+main.contents {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    justify-content: center;
+}
+main .main_Content {
+    float: left;
+    width: 680px;
+    max-width: 680px;
+    padding: 20px;
+    min-height: 100vh;
+    height: auto;
+    margin: 0 20px 0 0;
+    background-color: #fff;
+    border: #aaa solid 1px;
+}
+@media (max-width: 1010px) {
+    main.wrapper {
+        width: 100%;
+    }
+    main.contents {
+        width: 100%;
+    }
+    main .main_Content {
+        float: none;
+        margin: auto;
+        width: 100vw;
+    }
+}
+@media (max-width: 680px) {
+    main .main_Content {
+        border: none;
+    }
+}
+/* サイドコンテンツ */
+iframe.side_Menu {
+    float: right;
+    width: 300px;
+    min-height: 100vh;
+    height: 100%;
+    border: #aaa solid 1px;
+    overflow: hidden;
+}
+main .side_Content {
+    width: 300px;
+    padding: 20px;
+    max-width: 300px;
+    min-height: 100vh;
+    height: 100%;
+    background-color: #fff;
+    border: #aaa solid 1px;
+    overflow: hidden;
+}
+main .side_Content .side_Innner {
+    width: 100%;
+}
+main .side_Content img {
+    width: 100%;
+    height: auto;
+    border: var(--main_Color) solid 1px;
+}
+main .side_Content .sidemenus {
+    margin-bottom: 10px;
+}
+main .side_Content .sidemenus h2 {
+    font-size: 1.1em;
+}
+main .side_Content .category_List {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+main .side_Content .category_List a {
+    display: inline-block;
+    margin: 5px 2px;
+    padding: 5px 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+main .side_Content .survey ul {
+    width: 100%;
+    list-style: none;
+}
+main .side_Content .survey ul li {
+    margin-bottom: 5px;
+}
+main .side_Content .survey ul li label,
+main .side_Content .survey ul li input[type="radio"] {
+    cursor: var(--cursor_pointer);
+}
+main .side_Content .survey ul li input[type="radio"] {
+    accent-color: var(--main_Color);
+}
+main .side_Content .survey textarea {
+    width: 100%;
+    min-height: 100px;
+    max-height: 400px;
+    resize: vertical;
+    margin: auto auto 5px;
+    padding: 5px;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+    outline-color: var(--main_Color);
+}
+main .side_Content .survey button {
+    display: inline-block;
+    margin: auto;
+    padding: 5px 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    text-align: center;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    border: none;
+    color: var(--main_Color);
+    font-size: 0.9em;
+    cursor: var(--cursor_pointer);
+}
+main .side_Content .survey button:hover {
+    background-color: var(--main_Color);
+    color: #fff;
+}
+@media (min-width: 1010px) {
+    main .side_Content .responsive_Menu_Links {
+        display: none;
+    }
+    main .side_Content .category_List a:hover {
+        background-color: var(--main_Color);
+        color: #fff;
+    }
+}
+@media (max-width: 1010px) {
+    main .side_Content {
+        position: fixed;
+        z-index: 10000000;
+        right: -300px;
+        top: 0;
+        box-shadow: rgba(0, 0, 0, 0.363) 0 0 10px;
+        transition: var(--transition);
+        border: none;
+    }
+    main .side_Content .category_List a:active {
+        background-color: var(--main_Color);
+        color: #fff;
+    }
+    main .side_Content .responsive_Menu_Links {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 0 10px 20px;
+    }
+    main .side_Content .responsive_Menu_Links label a {
+        display: inline-block;
+        padding: 0px 10px;
+        text-align: center;
+        line-height: 32px;
+        background-color: #eee;
+        border-radius: 5px;
+        color: var(--main_Color);
+        transition: var(--transition);
+    }
+    main .side_Content .responsive_Menu_Links label button {
+        display: inline-block;
+        padding: 0px 10px;
+        text-align: center;
+        line-height: 32px;
+        background-color: #eee;
+        border: none;
+        border-radius: 5px;
+        color: var(--main_Color);
+        font-size: medium;
+        cursor: var(--cursor_pointer);
+        transition: var(--transition);
+    }
+    main .side_Content .responsive_Menu_Links label a:hover {
+        text-decoration: none;
+    }
+    main .side_Content .responsive_Menu_Links label a:active,
+    main .side_Content .responsive_Menu_Links label button:active {
+        text-decoration: none;
+        background-color: var(--main_Color);
+        color: #fff;
+    }
+    main .active {
+        right: 0;
+    }
+    main .side_Content .survey textarea {
+        max-height: 250px;
+        resize: vertical;
+    }
+}
+/* オーバーレイコンテンツ */
+main .overlay_Content {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+main .overlay_Content .overlay_Menu_Btn_Outer {
+    z-index: 10000000;
+    position: fixed;
+    width: 50px;
+    height: 200px;
+    right: 0px;
+    bottom: 80px;
+    background-color: #fff;
+    color: #000;
+    border: #999 solid 1px;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -8px 0px 8px -8px rgba(0, 0, 0, 0.363), 0 -8px 8px -8px rgba(0, 0, 0, 0.363), 0 8px 8px -8px rgba(0, 0, 0, 0.363);
+    transition: var(--transition);
+}
+main .overlay_Content .overlay_Menu_Btn_Outer input {
+    display: none;
+}
+main .overlay_Content .overlay_Menu_Btn_Outer label span {
+    display: flex;
+    min-width: 50px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    cursor: var(--cursor_pointer);
+}
+main .overlay_Content .overlay_Menu_Btn_Outer label span:last-child {
+    position: absolute;
+    top: 20px;
+    height: auto;
+}
+main .overlay_Content .overlay_Menu_Btn_Outer:active {
+    background-color: var(--main_Color);
+    color: #fff;
+}
+@media (min-width: 1010px) {
+    main .overlay_Content .overlay_Menu_Btn_Outer {
+        opacity: 0;
+        display: none;
+    }
+}
+@media (max-width: 1010px) {
+    main .overlay_Menu_Btn_Outer.active {
+        right: 300px;
+    }
+}
+
+/* フッター */
+iframe.footer {
+    position: absolute;
+    width: 100%;
+    height: 64px;
+    box-shadow: rgba(0, 0, 0, 0.363) 0 0 10px;
+    border: none;
+}
+footer {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 20px 100px;
+    align-items: center;
+    background-color: #fff;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.363) 0 0 10px;
+    overflow-x: hidden;
+}
+footer .footer_Link {
+    width: 400px;
+}
+footer ul {
+    display: flex;
+    justify-content: space-between;
+}
+footer ul li {
+    list-style: none;
+}
+@media (max-width: 1010px) {
+    footer {
+        padding: 20px 50px;
+    }
+    footer .footer_Link {
+        width: 55%;
+    }
+}
+@media (max-width: 680px) {
+    iframe.footer {
+        position: absolute;
+        width: 100%;
+        height: 93px;
+        box-shadow: rgba(0, 0, 0, 0.363) 0 0 10px;
+        border: none;
+    }
+    footer {
+        display: block;
+        text-align: center;
+        padding: 20px 30px;
+    }
+    footer .footer_Link {
+        width: 100%;
+    }
+    footer ul {
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    footer ul li {
+        margin: auto;
+        font-size: 13px;
+    }
+}
+
+/* 共通input類 */
+input[type="checkbox"] {
+    accent-color: var(--main_Color);
+}
+input[type="number"] {
+    outline-color: var(--main_Color);
+}
+
+/*------------------
+* トップページ
+------------------*/
+
+#top-page .top_Banner_Outer {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+
+#top-page .slider {
+    width: 96%;
+    margin: 0 auto;
+}
+
+#top-page .slider img {
+    object-fit: cover;
+    width: 500px;
+    height: 281.25px;
+    margin: auto;
+}
+#top-page .slick-prev,
+#top-page .slick-next {
+    z-index: 100;
+    position: absolute;
+    top: 42%;
+    cursor: var(--cursor_pointer);
+    outline: none;
+    border-top: 8px solid var(--main_Color);
+    border-right: 8px solid var(--main_Color);
+    height: 20px;
+    width: 20px;
+    transition: var(--transition);
+}
+#top-page .slick-prev {
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+#top-page .slick-next {
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+#top-page .slick-dots {
+    text-align: center;
+    margin: 10px 0 0;
+}
+#top-page .slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+}
+#top-page .slick-dots button {
+    color: transparent;
+    border: none;
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    background: #ccc;
+    transition: var(--transition);
+}
+#top-page .slick-dots .slick-active button {
+    background: var(--main_Color);
+}
+#top-page .topic_Grid {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+#top-page .top_Topic_Outer {
+    margin: 40px 0;
+    width: 100%;
+    height: auto;
+}
+#top-page .top_Topic_Outer h2 {
+    display: inline-block;
+    text-align: center;
+    color: #000;
+    font-weight: bolder;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+#top-page .top_Topic_Outer ul {
+    list-style: none;
+}
+#top-page .top_Ranking_Outer div.ranking_All {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+#top-page .top_Ranking_Outer .ranking_All a {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+    border: #888 solid 2px;
+    background-color: #fff;
+    cursor: var(--cursor_pointer);
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+#top-page .top_Ranking_Innner {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+}
+#top-page .ranking {
+    margin: 0 10px;
+}
+#top-page .ranking a {
+    color: #000;
+}
+#top-page .ranking div {
+    width: 50px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bolder;
+    margin: 5px 0;
+}
+#top-page .ranking.top_Ranking_1 div {
+    background-color: var(--sub_Color2);
+}
+#top-page .ranking.top_Ranking_2 div {
+    background-color: var(--main_Color);
+}
+#top-page .ranking.top_Ranking_3 div {
+    background-color: var(--main_Color);
+}
+#top-page .ranking img {
+    object-fit: cover;
+    width: 125px;
+    height: 125px;
+    border-radius: 10px;
+}
+#top-page .top_Review_Outer {
+    padding-left: 10px;
+    border-left: #000 solid 1px;
+}
+#top-page .top_Review_Inner {
+    width: 100%;
+}
+#top-page .review {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+#top-page .review a {
+    display: flex;
+    color: #000;
+}
+#top-page .review img {
+    object-fit: cover;
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+#top-page .review div {
+    cursor: var(--cursor_pointer);
+}
+#top-page .categorys {
+    margin-top: 10px;
+    text-align: left;
+}
+#top-page .top_Browsing_History_Outer {
+    margin: 40px 0;
+    width: 100%;
+    height: auto;
+}
+#top-page .top_Browsing_History_Outer h2 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+#top-page ul.top_Browsing_History_Inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    list-style: none;
+}
+#top-page ul.top_Browsing_History_Inner li {
+    margin: auto;
+}
+#top-page ul.top_Browsing_History_Inner img {
+    object-fit: cover;
+    width: 125px;
+    height: 125px;
+    border-radius: 10px;
+}
+@media (min-width: 1010px) {
+    #top-page .slick-prev:hover,
+    #top-page .slick-next:hover {
+        border-top: 8px solid var(--sub_Color2);
+        border-right: 8px solid var(--sub_Color2);
+    }
+    #top-page .slick-dots button:hover {
+        background: var(--sub_Color2);
+    }
+    #top-page .top_Ranking_Outer .ranking_All a:hover {
+        background-color: var(--main_Color);
+        color: #fff;
+        border-color: var(--main_Color);
+    }
+}
+@media (max-width: 1010px) {
+    #top-page .slick-prev:active,
+    #top-page .slick-next:active {
+        border-top: 8px solid var(--sub_Color2);
+        border-right: 8px solid var(--sub_Color2);
+    }
+    #top-page .slick-dots button:active {
+        background: var(--sub_Color2);
+    }
+    #top-page .top_Ranking_Outer .ranking_All a:active {
+        background-color: var(--main_Color);
+        color: #fff;
+        border-color: var(--main_Color);
+    }
+}
+@media (max-width: 680px) {
+    #top-page .topic_Grid {
+        display: block;
+    }
+    #top-page .top_Ranking_Outer .ranking_All a {
+        font-size: 4vw;
+        font-weight: normal;
+    }
+    #top-page .top_Review_Outer {
+        border-top: #aaa solid 1px;
+        border-left: none;
+    }
+    #top-page .top_Review_Inner .review {
+        display: block;
+    }
+    #top-page .review div {
+        width: 100%;
+    }
+    #top-page ul.top_Browsing_History_Inner {
+        flex-wrap: wrap;
+    }
+}
+
+/*------------------
+* 検索結果表示画面
+------------------*/
+
+#search-result-page main .main_Innner {
+    width: 100%;
+    height: auto;
+}
+
+#search-result-page main .search_Filter {
+    text-align: right;
+}
+
+#search-result-page main .search_Filter button {
+    padding: 5px 10px;
+    border: none;
+    cursor: var(--cursor_pointer);
+    background-color: #eee;
+    color: var(--main_Color);
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+#search-result-page main .search_Filter button:hover {
+    background-color: var(--main_Color);
+    color: #fff;
+}
+
+#search-result-page main .search_Result_List .recipes {
+    display: flex;
+    width: 100%;
+    height: 145px;
+    margin-top: 20px;
+    padding: 10px;
+    border: #cdd4c7 solid 2px;
+    background-color: #fafaf5;
+    border-radius: 5px;
+}
+
+#search-result-page main .search_Result_List .recipes img {
+    object-fit: cover;
+    width: 125px;
+    height: 125px;
+    border-radius: 10px;
+}
+
+#search-result-page main .recipes .cuisine_Details {
+    width: 100%;
+    height: 125px;
+    padding-left: 10px;
+}
+
+#search-result-page main .recipes .cuisine_Details h2 a {
+    font-size: 25px;
+    color: var(--main_Color);
+}
+
+#search-result-page main .recipes .cuisine_Details p {
+    width: 100%;
+    height: 87px;
+    overflow-y: scroll;
+    text-overflow: ellipsis;
+    scrollbar-color: var(--main_Color) transparent;
+}
+
+#search-result-page main .recipes ::-webkit-scrollbar-track {
+    display: none;
+}
+@media (min-width: 1010px) {
+    /* 横幅1010px以上の場合 */
+}
+@media (max-width: 1010px) {
+    /* 横幅1010px以下の場合 */
+}
+
+/*------------------
+* 料理詳細表示画面
+------------------*/
+
+#cooking-recipe-page .cooking_grid {
+    display: grid;
+    grid-template-columns: 230px 102px;
+}
+
+#cooking-recipe-page .cooking_Recipe_Info {
+    width: 100%;
+    height: auto;
+}
+
+#cooking-recipe-page .cooking_Display {
+    display: flex;
+    margin: 10px 0 20px;
+    width: 100%;
+    height: auto;
+}
+
+#cooking-recipe-page .cooking_Display .cooking_Info img {
+    object-fit: cover;
+    width: 288px;
+    height: 162px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+#cooking-recipe-page .cooking_Display .cooking_Info .cooking_Control {
+    width: 288px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#cooking-recipe-page .cooking_Control div {
+    width: 288px;
+    font-size: 1.2em;
+}
+
+#cooking-recipe-page .cooking_Control div.favorite_Btn {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#cooking-recipe-page .cooking_Control div.favorite_Btn input {
+    width: 30px;
+    height: 30px;
+}
+#cooking-recipe-page .cooking_Control div.number_Of_People {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+#cooking-recipe-page .cooking_Control div.number_Of_People input {
+    width: 120px;
+    height: 30px;
+    text-align: center;
+}
+
+#cooking-recipe-page .cooking_Display .cooking_Ingredients p {
+    width: 100%;
+    white-space: pre-line;
+    text-align: left;
+}
+
+#cooking-recipe-page .cooking_Details {
+    margin-top: 20px;
+    width: 100%;
+}
+
+#cooking-recipe-page .cooking_Details p {
+    width: 100%;
+    white-space: pre-line;
+    text-align: left;
+}
+@media (min-width: 1010px) {
+    /* 横幅1010px以上の場合 */
+}
+@media (max-width: 1010px) {
+    /* 横幅1010px以下の場合 */
+}
+@media (max-width: 680px) {
+    /* 横幅680px以下の場合 */
+    #cooking-recipe-page .cooking_Display {
+        display: block;
+    }
+    #cooking-recipe-page .cooking_Display .cooking_Info img {
+        object-fit: cover;
+        width: 90%;
+        height: 200px;
+        margin: auto;
+    }
+    #cooking-recipe-page .cooking_Display .cooking_Info .cooking_Control {
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    #cooking-recipe-page .cooking_Control div.favorite_Btn {
+        justify-content: center;
+    }
+    #cooking-recipe-page .cooking_Control div.number_Of_People {
+        justify-content: center;
+    }
+    #cooking-recipe-page .cooking_Recipe_Info {
+        text-align: center;
+    }
+    #cooking-recipe-page .cooking_grid {
+        grid-template-columns: 70% 30%;
+    }
+}
+
+/*------------------
+* ログイン / 新規登録画面
+------------------*/
+
+#login-page main.content,
+#sign-up-page main.content {
+    justify-content: center;
+    align-items: center;
+}
+#login-page .form_Outer,
+#sign-up-page .form_Outer {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    justify-content: center;
+}
+#login-page .form_Bg,
+#sign-up-page .form_Bg {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 448px;
+    background-color: #fff;
+}
+#login-page .formbg_Inner,
+#sign-up-page .formbg_Inner {
+    color: #444;
+    padding: 20px;
+}
+#login-page .formbg_Inner h2,
+#sign-up-page .formbg_Inner h2 {
+    font-size: 2em;
+    font-weight: bolder;
+    color: var(--main_Color);
+}
+#login-page .field,
+#sign-up-page .field {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+#login-page .field h3,
+#sign-up-page .field h3 {
+    margin: 15px 0;
+    font-size: 1.1em;
+}
+#login-page .field input,
+#sign-up-page .field input {
+    font-size: 16px;
+    line-height: 28px;
+    padding: 8px 16px;
+    width: 100%;
+    min-height: 44px;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+    outline-color: var(--main_Color);
+}
+#login-page .field button,
+#sign-up-page .field button {
+    display: inline-block;
+    padding: 5px 15px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9em;
+    background-color: var(--main_Color);
+    border: unset;
+    border-radius: 5px;
+    cursor: var(--cursor_pointer);
+    transition: var(--transition);
+}
+#login-page .form_Grid,
+#sign-up-page .form_Grid {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+}
+#login-page .reset_Password {
+    width: 100%;
+    text-align: right;
+}
+#login-page .field_Checkbox input,
+#sign-up-page .field_Checkbox input {
+    width: 20px;
+    height: 15px;
+    margin-right: 5px;
+    box-shadow: unset;
+    min-height: unset;
+}
+#login-page .field_Checkbox label,
+#sign-up-page .field_Checkbox label {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+#login-page .login_Btn,
+#sign-up-page .sign-up_Btn {
+    text-align: right;
+}
+#login-page .sns_Linked_Auth,
+#sign-up-page .sns_Linked_Auth {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#login-page .sns_Linked_Auth button,
+#sign-up-page .sns_Linked_Auth button {
+    padding: auto;
+    width: 150px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: 900;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: var(--accent_Color) 1px solid;
+    transition: var(--transition);
+    color: #222;
+}
+#login-page .sns_Linked_Auth button i,
+#sign-up-page .sns_Linked_Auth button i {
+    margin-right: 10px;
+    cursor: var(--cursor_pointer);
+}
+#login-page .sns_Linked_Auth #facebook_Login_Submit,
+#sign-up-page .sns_Linked_Auth #facebook_Sign-up_Submit {
+    color: #375696;
+}
+#login-page .sns_Linked_Auth #twitter_Login_Submit,
+#sign-up-page .sns_Linked_Auth #twitter_Sign-up_Submit {
+    color: #1a8cd8;
+}
+#login-page .sns_Linked_Auth #google_Login_Submit,
+#sign-up-page .sns_Linked_Auth #google_Sign-up_Submit {
+    color: #ea4335;
+}
+#login-page .sns_Linked_Auth #appleid_Login_Submit,
+#sign-up-page .sns_Linked_Auth #appleid_Sign-up_Submit {
+    color: #333;
+}
+@media (min-width: 1010px) {
+    /* 横幅1010px以上の場合 */
+    #login-page main .main_Content,
+    #sign-up-page main .main_Content {
+        margin: auto;
+        float: unset;
+    }
+    #login-page .field button:hover,
+    #sign-up-page .field button:hover {
+        box-shadow: 0 0 5px #555;
+    }
+    #login-page .sns_Linked_Auth #facebook_Login_Submit:hover,
+    #login-page .sns_Linked_Auth #facebook_Login_Submit i:hover,
+    #sign-up-page .sns_Linked_Auth #facebook_Sign-up_Submit:hover,
+    #sign-up-page .sns_Linked_Auth #facebook_Sign-up_Submit i:hover {
+        border-color: #375696;
+        background-color: #375696;
+        color: #fff;
+    }
+    #login-page .sns_Linked_Auth #twitter_Login_Submit:hover,
+    #login-page .sns_Linked_Auth #twitter_Login_Submit i:hover,
+    #sign-up-page .sns_Linked_Auth #twitter_Sign-up_Submit:hover,
+    #sign-up-page .sns_Linked_Auth #twitter_Sign-up_Submit i:hover {
+        border-color: #1a8cd8;
+        background-color: #1a8cd8;
+        color: #fff;
+    }
+    #login-page .sns_Linked_Auth #google_Login_Submit:hover,
+    #login-page .sns_Linked_Auth #google_Login_Submit i:hover,
+    #sign-up-page .sns_Linked_Auth #google_Sign-up_Submit:hover,
+    #sign-up-page .sns_Linked_Auth #google_Sign-up_Submit i:hover {
+        border-color: #ea4335;
+        background-color: #ea4335;
+        color: #fff;
+    }
+    #login-page .sns_Linked_Auth #appleid_Login_Submit:hover,
+    #login-page .sns_Linked_Auth #appleid_Login_Submit i:hover,
+    #sign-up-page .sns_Linked_Auth #appleid_Sign-up_Submit:hover,
+    #sign-up-page .sns_Linked_Auth #appleid_Sign-up_Submit i:hover {
+        border-color: #333;
+        background-color: #333;
+        color: #fff;
+    }
+}
+@media (max-width: 1010px) {
+    /* 横幅1010px以下の場合 */
+    #login-page header,
+    #sign-up-page header {
+        padding: 20px 50px;
+        display: block;
+        text-align: center;
+        height: auto;
+    }
+    #login-page header .header-Menu,
+    #sign-up-page header .header-Menu {
+        width: 100%;
+        display: flex;
+    }
+    #login-page header .header_Search_Container,
+    #sign-up-page header .header_Search_Container {
+        margin: auto;
+    }
+    #login-page .field button:active,
+    #sign-up-page .field button:active {
+        box-shadow: 0 0 5px #555;
+    }
+    #login-page .form_Grid,
+    #sign-up-page .form_Grid {
+        grid-template-columns: 93px calc(100% - 93px);
+    }
+    #login-page .reset_Password,
+    #sign-up-page .reset_Password {
+        font-size: 0.86em;
+    }
+    #login-page .sns_Linked_Auth #facebook_Login_Submit:active,
+    #login-page .sns_Linked_Auth #facebook_Login_Submit i:active,
+    #sign-up-page .sns_Linked_Auth #facebook_Sign-up_Submit:active,
+    #sign-up-page .sns_Linked_Auth #facebook_Sign-up_Submit i:active {
+        border-color: #375696;
+        background-color: #375696;
+        color: #fff;
+    }
+    #login-page .sns_Linked_Auth #twitter_Login_Submit:active,
+    #login-page .sns_Linked_Auth #twitter_Login_Submit i:active,
+    #sign-up-page .sns_Linked_Auth #twitter_Sign-up_Submit:active,
+    #sign-up-page .sns_Linked_Auth #twitter_Sign-up_Submit i:active {
+        border-color: #1a8cd8;
+        background-color: #1a8cd8;
+        color: #fff;
+    }
+    #login-page .sns_Linked_Auth #google_Login_Submit:active,
+    #login-page .sns_Linked_Auth #google_Login_Submit i:active,
+    #sign-up-page .sns_Linked_Auth #google_Sign-up_Submit:active,
+    #sign-up-page .sns_Linked_Auth #google_Sign-up_Submit i:active {
+        border-color: #ea4335;
+        background-color: #ea4335;
+        color: #fff;
+    }
+    #login-page .sns_Linked_Auth #appleid_Login_Submit:active,
+    #login-page .sns_Linked_Auth #appleid_Login_Submit i:active,
+    #sign-up-page .sns_Linked_Auth #appleid_Sign-up_Submit:active,
+    #sign-up-page .sns_Linked_Auth #appleid_Sign-up_Submit i:active {
+        border-color: #333;
+        background-color: #333;
+        color: #fff;
+    }
+}
+
+/*------------------
+* 閲覧数ランキング画面
+------------------*/
+
+#view-ranking-page main .main_Innner {
+    width: 100%;
+    height: auto;
+}
+
+#view-ranking-page main .ranking_Filter {
+    text-align: right;
+}
+
+#view-ranking-page main .ranking_Filter button {
+    padding: 5px 10px;
+    border: none;
+    cursor: var(--cursor_pointer);
+    background-color: #eee;
+    color: var(--main_Color);
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+#view-ranking-page main .ranking_Filter button:hover {
+    background-color: var(--main_Color);
+    color: #fff;
+}
+#view-ranking-page main .all_Rankings_List {
+    position: relative;
+    width: 100%;
+}
+#view-ranking-page main .all_Rankings_List .recipes {
+    display: flex;
+    width: 100%;
+    height: 185px;
+    margin-top: 20px;
+    padding: 10px;
+    padding-top: 40px;
+    border: #cdd4c7 solid 2px;
+    background-color: #fafaf5;
+    border-radius: 5px;
+}
+#view-ranking-page main .all_Rankings_List .recipe_infos {
+    position: relative;
+    width: 100%;
+}
+#view-ranking-page .ranking {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    border: #cdd4c7 solid 2px;
+    border-bottom: 0;
+    border-radius: 5px 5px 0 0;
+    background-color: var(--main_Color);
+    padding-left: 20px;
+    color: #fff;
+    font-weight: 900;
+}
+
+#view-ranking-page .ranking_1st {
+    background-color: var(--sub_Color2);
+}
+
+#view-ranking-page main .all_Rankings_List .recipes img {
+    object-fit: cover;
+    width: 125px;
+    height: 125px;
+    border-radius: 10px;
+}
+
+#view-ranking-page main .recipes .cuisine_Details {
+    width: 100%;
+    height: 125px;
+    padding-left: 10px;
+}
+
+#view-ranking-page main .recipes .cuisine_Details h2 a {
+    font-size: 25px;
+    color: var(--main_Color);
+}
+
+#view-ranking-page main .recipes .cuisine_Details p {
+    width: 100%;
+    height: 87px;
+    overflow-y: scroll;
+    text-overflow: ellipsis;
+    scrollbar-color: var(--main_Color) transparent;
+}
+#view-ranking-page main .recipes ::-webkit-scrollbar-track {
+    display: none;
+}
+@media (min-width: 1010px) {
+    /* 横幅1010px以上の場合 */
+}
+@media (max-width: 1010px) {
+    /* 横幅1010px以下の場合 */
+}
+
+/*------------------
+* お問い合わせ画面
+------------------*/
+
+/*------------------
+* サイト詳細画面
+------------------*/
+
+/*------------------
+* マイページ画面
+------------------*/
+
+#my-page main .main_Content {
+    padding: 0;
+    height: calc(100vh - 44px);
+}
+#my-page .banner_Content {
+    width: 680px;
+    height: 210px;
+    margin-bottom: 20px;
+}
+#my-page .banner_Content .banner_Outer {
+    border: #aaa solid 1px;
+}
+#my-page .banner_Content .banner_Image {
+    width: 100%;
+    height: 120px;
+}
+#my-page .banner_Content .banner_Image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: var(--main_Color);
+}
+#my-page .banner_Content .banner_Bottom {
+    width: 100%;
+    height: 90px;
+    background-color: #fff;
+    padding: 20px;
+}
+#my-page .banner_Content .banner_Bottom img {
+    position: absolute;
+    top: 90px;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #bbb;
+}
+#my-page .banner_Content .banner_Bottom .user_Infos {
+    width: 100%;
+    height: auto;
+    text-align: right;
+}
+#my-page .tab_Contents section,
+#my-page input[name="tab_Input"] {
+    display: none;
+}
+#my-page main ul.tab_Btn {
+    display: flex;
+    list-style: none;
+    min-width: 100%;
+    background-color: var(--main_Color);
+    color: #fff;
+}
+#my-page main ul.tab_Btn li {
+    margin: 10px 0;
+}
+#my-page main ul.tab_Btn li label {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: #aaa solid 1px;
+    border-width: 0 1px 0 0;
+    padding: 10px 15px;
+    font-weight: 900;
+    cursor: var(--cursor_pointer);
+    transition: var(--transition);
+}
+#my-page #top_Tab:checked ~ .tab_Btn label[for="top_Tab"],
+#my-page #recipe_Tab:checked ~ .tab_Btn label[for="recipe_Tab"],
+#my-page #setting_Tab:checked ~ .tab_Btn label[for="setting_Tab"] {
+    background: #fff;
+    color: var(--main_Color);
+}
+#my-page #top_Tab:checked ~ .tab_Contents #top,
+#my-page #recipe_Tab:checked ~ .tab_Contents #recipe,
+#my-page #setting_Tab:checked ~ .tab_Contents #setting {
+    display: block;
+}
+#my-page main .tab_Contents {
+    height: 100%;
+    min-height: 100vh;
+    padding: 20px;
+}
+#my-page #recipe .favorite_Outer {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+#my-page #recipe .favorite_Outer h2 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+#my-page #recipe ul.favorite_Inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    margin-top: 10px;
+}
+#my-page #recipe ul.favorite_Inner li {
+    margin: auto;
+}
+#my-page #recipe ul.favorite_Inner img {
+    object-fit: cover;
+    width: 125px;
+    height: 125px;
+    border-radius: 10px;
+}
+#my-page #recipe .browsing_History_Outer {
+    width: 100%;
+    height: auto;
+}
+#my-page #recipe .browsing_History_Outer h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+#my-page #recipe ul.browsing_History_Inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    margin-top: 10px;
+}
+#my-page #recipe ul.browsing_History_Inner li {
+    margin: auto;
+}
+#my-page #recipe ul.browsing_History_Inner img {
+    object-fit: cover;
+    width: 125px;
+    height: 125px;
+    border-radius: 10px;
+}
+#my-page #setting .user_setting_Outer {
+    width: 100%;
+    margin-bottom: 20px;
+}
+#my-page #setting .user_setting_Outer h2 {
+    font-size: 1.2em;
+}
+#my-page #setting .user_setting_Outer .password_Auth_Outer {
+    width: 100%;
+    margin-top: 10px;
+}
+#my-page #setting .user_setting_Outer .password_Auth_Outer p {
+    font-size: small;
+}
+#my-page #setting .user_setting_Outer .password_Auth_Outer .password_Auth_Inner {
+    width: 100%;
+    padding: 20px;
+}
+#my-page #setting .user_setting_Outer .password_Auth_Outer .password_Auth {
+    margin: auto;
+    width: 300px;
+    padding: 10px;
+    border: #aaa 1px solid;
+    border-radius: 5px;
+    background-color: var(--main_Color);
+    color: #fff;
+}
+#my-page #setting .user_setting_Outer .password_Auth_Outer .password_Auth input {
+    margin-right: 10px;
+}
+#my-page #setting .user_setting_Outer .user_setting_Innner {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    margin-top: 10px;
+    padding: 0;
+}
+#my-page #setting .user_setting_Outer .user_setting_Innner .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#my-page #setting .user_setting_Outer .user_setting_Innner table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+#my-page #setting .user_setting_Outer .user_setting_Innner table th,
+#my-page #setting .user_setting_Outer .user_setting_Innner table td {
+    border: #aaa 1px solid;
+    padding: 5px 10px;
+}
+#my-page #setting .user_setting_Outer .user_setting_Innner table th {
+    width: 100px;
+    height: auto;
+    background-color: var(--main_Color);
+    color: #fff;
+}
+#my-page #setting .user_setting_Outer .user_setting_Innner table td {
+    width: 300px;
+    height: auto;
+}
+#my-page #setting .user_setting_Outer .user_setting_Innner table td div {
+    display: flex;
+    justify-content: space-between;
+}
+#my-page #setting .user_setting_Outer .user_setting_Innner table td div input {
+    width: 80%;
+}
+#my-page #setting .user_setting_Outer .user_setting_Innner table td div button {
+    background-color: transparent;
+    border: none;
+    color: var(--main_Color);
+    cursor: var(--cursor_pointer);
+    font-size: medium;
+}
+#my-page #setting .sns_Linked_Outer {
+    width: 100%;
+    margin-bottom: 20px;
+}
+#my-page #setting .sns_Linked_Outer p {
+    font-size: small;
+    margin-top: 10px;
+}
+#my-page .sns_Links {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+#my-page .sns_Links button {
+    padding: auto;
+    width: 150px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: 900;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: var(--accent_Color) 1px solid;
+    border-radius: 5px;
+    transition: var(--transition);
+    color: #222;
+}
+#my-page .sns_Links button i {
+    margin-right: 10px;
+    cursor: var(--cursor_pointer);
+}
+#my-page .sns_Links #facebook_Link_Submit {
+    color: #375696;
+}
+#my-page .sns_Links #twitter_Link_Submit {
+    color: #1a8cd8;
+}
+#my-page .sns_Links #google_Link_Submit {
+    color: #ea4335;
+}
+#my-page .sns_Links #appleid_Link_Submit {
+    color: #333;
+}
+@media (min-width: 1010px) {
+    /* 横幅1010px以上の場合 */
+    #my-page main ul.tab_Btn li label:hover {
+        background-color: var(--sub_Color2);
+    }
+    #my-page #setting .user_setting_Outer .user_setting_Innner table td div button:hover {
+        text-decoration: underline;
+    }
+    #my-page .sns_Links button:hover {
+        box-shadow: 0 0 5px #555;
+    }
+    #my-page .sns_Links #facebook_Link_Submit:hover,
+    #my-page .sns_Links #facebook_Link_Submit i:hover {
+        border-color: #375696;
+        background-color: #375696;
+        color: #fff;
+    }
+    #my-page .sns_Links #twitter_Link_Submit:hover,
+    #my-page .sns_Links #twitter_Link_Submit i:hover {
+        border-color: #1a8cd8;
+        background-color: #1a8cd8;
+        color: #fff;
+    }
+    #my-page .sns_Links #google_Link_Submit:hover,
+    #my-page .sns_Links #google_Link_Submit i:hover {
+        border-color: #ea4335;
+        background-color: #ea4335;
+        color: #fff;
+    }
+    #my-page .sns_Links #appleid_Link_Submit:hover,
+    #my-page .sns_Links #appleid_Link_Submit i:hover {
+        border-color: #333;
+        background-color: #333;
+        color: #fff;
+    }
+}
+@media (max-width: 1010px) {
+    /* 横幅1010px以下の場合 */
+    #my-page .banner_Content {
+        margin: 0 auto 20px;
+    }
+    #my-page main ul.tab_Btn li label:active {
+        background-color: var(--sub_Color2);
+    }
+    #my-page #setting .user_setting_Outer .user_setting_Innner table td div button:active {
+        text-decoration: underline;
+    }
+    #my-page .sns_Links #facebook_Link_Submit:active,
+    #my-page .sns_Links #facebook_Link_Submit i:active {
+        border-color: #375696;
+        background-color: #375696;
+        color: #fff;
+    }
+    #my-page .sns_Links #twitter_Link_Submit:active,
+    #my-page .sns_Links #twitter_Link_Submit i:active {
+        border-color: #1a8cd8;
+        background-color: #1a8cd8;
+        color: #fff;
+    }
+    #my-page .sns_Links #google_Link_Submit:active,
+    #my-page .sns_Links #google_Link_Submit i:active {
+        border-color: #ea4335;
+        background-color: #ea4335;
+        color: #fff;
+    }
+    #my-page .sns_Links #appleid_Link_Submit:active,
+    #my-page .sns_Links #appleid_Link_Submit i:active {
+        border-color: #333;
+        background-color: #333;
+        color: #fff;
+    }
+}
+@media (max-width: 680px) {
+    /* 横幅680px以下の場合 */
+    #my-page .banner_Content {
+        width: 100%;
+    }
+    #my-page .banner_Content .banner_Outer {
+        border: none;
+    }
+    #my-page #recipe ul.favorite_Inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #my-page #recipe ul.favorite_Inner li {
+        margin: 10px auto;
+    }
+    #my-page #recipe ul.browsing_History_Inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #my-page #recipe ul.browsing_History_Inner li {
+        margin: 10px auto;
+    }
+    #my-page #setting .user_setting_Outer .user_setting_Innner {
+        overflow-x: scroll;
+        padding-bottom: 5px;
+    }
+    #my-page #setting .user_setting_Outer .user_setting_Innner table {
+        width: 540px;
+    }
+}
+
+/*------------------
+* 確認系画面
+------------------*/
+
+#confirm-page main.content {
+    justify-content: center;
+    align-items: center;
+}
+#confirm-page .form_Outer {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    justify-content: center;
+}
+#confirm-page .form_Bg {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 448px;
+    background-color: #fff;
+}
+#confirm-page .formbg_Inner {
+    color: #444;
+    padding: 20px;
+}
+#confirm-page .logout_Submit {
+    text-align: center;
+    margin: auto;
+}
+#confirm-page .logout_Submit p {
+    color: var(--caution_Color);
+}
+#confirm-page .logout_Submit button {
+    margin: 20px 0;
+    display: inline-block;
+    padding: 0px 10px;
+    text-align: center;
+    line-height: 32px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: #ccc solid 1px;
+    color: #666;
+    font-size: medium;
+    cursor: var(--cursor_pointer);
+    transition: var(--transition);
+}
+#confirm-page .formbg_Inner h2 {
+    font-size: 2em;
+    font-weight: bolder;
+    color: var(--main_Color);
+}
+#confirm-page .formbg_Inner .caution,
+#confirm-page .formbg_Inner .psw_Reset_Collect {
+    margin-top: 5px;
+}
+#confirm-page .field {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+#confirm-page .field h3 {
+    margin: 15px 0;
+    font-size: 1.1em;
+}
+#confirm-page .field input {
+    font-size: 16px;
+    line-height: 28px;
+    padding: 8px 16px;
+    width: 100%;
+    min-height: 44px;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+    outline-color: var(--main_Color);
+}
+#confirm-page .field button {
+    display: inline-block;
+    padding: 5px 15px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9em;
+    background-color: var(--main_Color);
+    border: unset;
+    border-radius: 5px;
+    cursor: var(--cursor_pointer);
+    transition: var(--transition);
+}
+#confirm-page .field .reset_Password {
+    text-align: right;
+}
+#confirm-page .form_Grid {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+}
+#confirm-page .field .login_Btn {
+    text-align: right;
+}
+#confirm-page .field_Checkbox input {
+    width: 20px;
+    height: 15px;
+    margin-right: 5px;
+    box-shadow: unset;
+    min-height: unset;
+}
+#confirm-page .field_Checkbox label {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+#confirm-page .Btn_Outer {
+    text-align: right;
+}
+@media (min-width: 1010px) {
+    /* 横幅1010px以上の場合 */
+    #confirm-page main .main_Content {
+        margin: auto;
+        float: unset;
+    }
+    #confirm-page .field button:hover {
+        box-shadow: 0 0 5px #555;
+    }
+}
+@media (max-width: 1010px) {
+    /* 横幅1010px以下の場合 */
+    #confirm-page header {
+        padding: 20px 50px;
+        display: block;
+        text-align: center;
+        height: auto;
+    }
+    #confirm-page header .header-Menu {
+        width: 100%;
+        display: flex;
+    }
+    #confirm-page header .header_Search_Container {
+        margin: auto;
+    }
+    #confirm-page .field button:active {
+        box-shadow: 0 0 5px #555;
+    }
+    #confirm-page .form_Grid {
+        grid-template-columns: 93px calc(100% - 93px);
+    }
+}
+
+/*------------------
+* デバッグ画面
+------------------*/
+
+#debug-page .browsing_History_Outer {
+    margin: 40px 0;
+    width: 100%;
+    height: auto;
+}
+#debug-page .browsing_History_Outer h2 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+#debug-page ul.browsing_History_Inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    list-style: none;
+}
+#debug-page ul.browsing_History_Inner li {
+    margin: auto;
+}
+#debug-page ul.browsing_History_Inner img {
+    object-fit: cover;
+    width: 125px;
+    height: 125px;
+    border-radius: 10px;
+}
