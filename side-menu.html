@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="/css/main.css" />
+        <script type="text/javascript" src="/js/ncmb.min.js" charset="utf-8"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <title>ヘッダー</title>
+    </head>
+    <body>
+        <div class="container">
+            <main class="wrapper">
+                <div class="contents">
+                    <div class="side_Content">
+                        <div class="side_Innner">
+                            <div class="responsive_Menu_Links">
+                                <label class="responsive_Menu_Link login_Btn"><a href="login.html">ログイン</a></label>
+                                <label class="responsive_Menu_Link sign_Up_Btn"><a href="sign_up.html">新規登録</a></label>
+                                <label class="responsive_Menu_Link mypage_Btn"><a href="mypage.html">マイページ</a></label>
+                                <label class="responsive_Menu_Link logout_Btn"><button>ログアウト</button></label>
+                            </div>
+                            <img src="/images/Banner.png" alt="サイドバナー" />
+                            <section class="sidemenus popular_Category">
+                                <h2>定番のキーワード</h2>
+                                <div class="category_List">
+                                    <a href="search_result.html?keyword=キャベツ">キャベツ</a>
+                                    <a href="search_result.html?keyword=大根">大根</a>
+                                    <a href="search_result.html?keyword=白菜">白菜</a>
+                                    <a href="search_result.html?keyword=じゃがいも">じゃがいも</a>
+                                    <a href="search_result.html?keyword=もやし">もやし</a>
+                                    <a href="search_result.html?keyword=豚肉">豚肉</a>
+                                    <a href="search_result.html?keyword=鶏肉">鶏肉</a>
+                                    <a href="search_result.html?keyword=和食">和食</a>
+                                    <a href="search_result.html?keyword=洋食">洋食</a>
+                                    <a href="search_result.html?keyword=中華料理">中華料理</a>
+                                </div>
+                            </section>
+                            <section class="sidemenus other_Category">
+                                <h2>その他のキーワード</h2>
+                                <div class="category_List">
+                                    <a href="search_result.html?keyword=時短">時短</a>
+                                    <a href="search_result.html?keyword=簡単">簡単</a>
+                                    <a href="search_result.html?keyword=料理の基本">料理の基本</a>
+                                    <a href="search_result.html?keyword=ヘルシー">ヘルシー</a>
+                                    <a href="search_result.html?keyword=子供が喜ぶ">子供が喜ぶ</a>
+                                    <a href="search_result.html?keyword=節約">節約</a>
+                                </div>
+                            </section>
+                            <section class="sidemenus survey">
+                                <h2>このサイトへのご意見をお聞かせください</h2>
+                                <ul>
+                                    <li>
+                                        <label><input type="radio" name="survey_Radio" value="service" checked /> サービスへのご意見・ご要望</label>
+                                    </li>
+                                    <li>
+                                        <label><input type="radio" name="survey_Radio" value="system" /> 機能の不具合</label>
+                                    </li>
+                                    <li>
+                                        <label><input type="radio" name="survey_Radio" value="recipe" /> レシピで気づいた点の報告</label>
+                                    </li>
+                                </ul>
+                                <textarea name="survey_Details"></textarea>
+                                <button onclick="alert('井汲切れたため未実装')">意見を送る</button>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>

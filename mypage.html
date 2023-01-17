@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="js/ncmb.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <title>今日なに食う？ / マイページ</title>
+    </head>
+
+    <body id="my-page">
+        <div class="container">
+            <header>
+                <h2 class="logo">
+                    <a href="index.html"><img src="images/logo.svg" alt="logo" /></a>
+                </h2>
+                <div class="header_Search_Container">
+                    <input type="search" placeholder="料理名・食材でレシピを探す" />
+                    <button class="search_Btn" id="search_Btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="header-Menu">
+                    <label class="header-Link login_Btn"><a href="login.html">ログイン</a></label>
+                    <label class="header-Link sign_Up_Btn"><a href="sign_up.html">新規登録</a></label>
+                    <label class="header-Link mypage_Btn"><a href="#">マイページ</a></label>
+                    <label class="header-Link logout_Btn"><button id="logout_Submit">ログアウト</button></label>
+                </div>
+            </header>
+            <main class="wrapper">
+                <div class="contents">
+                    <div class="banner_Content">
+                        <div class="banner_Outer">
+                            <div class="banner_Inner">
+                                <div class="banner_Image">
+                                    <img src="/images/logo.svg" alt="プロフィールのバナー画像" id="user_Banner" />
+                                </div>
+                                <div class="banner_Bottom">
+                                    <img src="/images/icon.svg" alt="プロフィールのアイコン画像" id="user_Icon" />
+                                    <div class="user_Infos">
+                                        <p id="user_Name">読み込み中... さん</p>
+                                        <p id="user_Rated">読み込み中... いいね</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main_Content">
+                        <input type="radio" name="tab_Input" id="top_Tab" checked="" />
+                        <input type="radio" name="tab_Input" id="recipe_Tab" />
+                        <input type="radio" name="tab_Input" id="setting_Tab" />
+                        <ul class="tab_Btn">
+                            <li><label for="top_Tab">トップ</label></li>
+                            <li><label for="recipe_Tab">レシピ</label></li>
+                            <li><label for="setting_Tab">設定</label></li>
+                        </ul>
+                        <div class="tab_Contents">
+                            <section id="top">
+                                <h3>トップコンテンツ</h3>
+                                <div class="section_Line"></div>
+                                <p>履歴</p>
+                            </section>
+                            <section id="recipe">
+                                <div class="favorite_Outer">
+                                    <h2>お気に入りレシピ</h2>
+                                    <div class="section_Line"></div>
+                                    <ul class="favorite_Inner" id="favorite_List">
+                                        <li class="favorite" id="favorite_1">
+                                            <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                        </li>
+                                        <li class="favorite" id="favorite_2">
+                                            <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                        </li>
+                                        <li class="favorite" id="favorite_3">
+                                            <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                        </li>
+                                        <li class="favorite" id="favorite_4">
+                                            <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="browsing_History_Outer">
+                                    <h2>最近見たレシピ</h2>
+                                    <div class="section_Line"></div>
+                                    <ul class="browsing_History_Inner" id="browsing_History_List">
+                                        <li class="history" id="browsing_History_1">
+                                            <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                        </li>
+                                        <li class="history" id="browsing_History_2">
+                                            <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                        </li>
+                                        <li class="history" id="browsing_History_3">
+                                            <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                        </li>
+                                        <li class="history" id="browsing_History_4">
+                                            <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section id="setting">
+                                <div class="user_setting_Outer">
+                                    <h2><i class="fa-solid fa-user"></i> お客様情報</h2>
+                                    <div class="section_Line"></div>
+                                    <div class="password_Auth_Outer">
+                                        <p>*登録したユーザー名・パスワード・アイコンなどの確認や変更ができます。</p>
+                                        <!-- <div class="password_Auth_Inner">
+                                            <div class="password_Auth">
+                                                <p>ログイン時のパスワードを入力してください</p>
+                                                <div><input type="password" /><button>認証</button></div>
+                                                <p class="caution">パスワードが違います</p>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="user_setting_Innner">
+                                        <!-- <div class="overlay"></div> -->
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>登録情報</th>
+                                                    <th>登録内容</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>ユーザー名</th>
+                                                    <td>
+                                                        <div>
+                                                            <div id="table_User_Name">読み込み中...</div>
+                                                            <a href="name-change.html">変更する</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>メールアドレス</th>
+                                                    <td><div id="table_User_Email">読み込み中...</div></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>パスワード</th>
+                                                    <td>
+                                                        <div>
+                                                            <div id="table_User_Password">表示されません</div>
+                                                            <a href="psw-reset-mail.html">変更する</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>ユーザーアイコン</th>
+                                                    <td>
+                                                        <div><input type="file" name="user_Icon_Set" id="icon_File_Data" accept="image/png, image/jpeg" /><button id="user_Icon_Set_Button">変更する</button></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>ユーザーバナー</th>
+                                                    <td>
+                                                        <div><input type="file" name="user_Banner_Set" id="banner_File_Data" accept="image/png, image/jpeg" /><button id="user_Banner_Set_Button">変更する</button></div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="sns_Linked_Outer">
+                                    <h3><i class="fa-solid fa-link"></i> SNSアカウントリンク</h3>
+                                    <div class="section_Line"></div>
+                                    <p>*お客様がご利用されているSNSアカウントと本サイトのアカウントを連携することにより、ログインが簡単に行えるようになります。</p>
+                                    <div class="sns_Links">
+                                        <button id="facebook_Link_Submit"><i class="fa-brands fa-square-facebook"></i>Facebook</button>
+                                        <button id="twitter_Link_Submit"><i class="fa-brands fa-twitter"></i>Twitter</button>
+                                        <button id="google_Link_Submit"><i class="fa-brands fa-google"></i>Google</button>
+                                        <button id="appleid_Link_Submit"><i class="fa-brands fa-apple"></i>Apple ID</button>
+                                    </div>
+                                </div>
+                                <div class="adming_Outer" id="admin_Content">
+                                    <h3><i class="fa-solid fa-key"></i> 管理者コンテンツ</h3>
+                                    <div class="section_Line"></div>
+                                    <a href="debug.html"><i class="fa-solid fa-arrow-left"></i> デバッグへ</a><br /><br />
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="side_Content">
+                        <div class="side_Innner">
+                            <div class="responsive_Menu_Links">
+                                <label class="responsive_Menu_Link login_Btn"><a href="login.html">ログイン</a></label>
+                                <label class="responsive_Menu_Link sign_Up_Btn"><a href="sign_up.html">新規登録</a></label>
+                                <label class="responsive_Menu_Link mypage_Btn"><a href="mypage.html">マイページ</a></label>
+                                <label class="responsive_Menu_Link logout_Btn"><button>ログアウト</button></label>
+                            </div>
+                            <img src="/images/Banner.png" alt="サイドバナー" />
+                            <section class="sidemenus popular_Category">
+                                <h2>定番のキーワード</h2>
+                                <div class="category_List">
+                                    <a href="search_result.html?keyword=キャベツ">キャベツ</a>
+                                    <a href="search_result.html?keyword=大根">大根</a>
+                                    <a href="search_result.html?keyword=白菜">白菜</a>
+                                    <a href="search_result.html?keyword=じゃがいも">じゃがいも</a>
+                                    <a href="search_result.html?keyword=もやし">もやし</a>
+                                    <a href="search_result.html?keyword=豚肉">豚肉</a>
+                                    <a href="search_result.html?keyword=鶏肉">鶏肉</a>
+                                    <a href="search_result.html?keyword=和食">和食</a>
+                                    <a href="search_result.html?keyword=洋食">洋食</a>
+                                    <a href="search_result.html?keyword=中華料理">中華料理</a>
+                                </div>
+                            </section>
+                            <section class="sidemenus other_Category">
+                                <h2>その他のキーワード</h2>
+                                <div class="category_List">
+                                    <a href="search_result.html?keyword=時短">時短</a>
+                                    <a href="search_result.html?keyword=簡単">簡単</a>
+                                    <a href="search_result.html?keyword=料理の基本">料理の基本</a>
+                                    <a href="search_result.html?keyword=ヘルシー">ヘルシー</a>
+                                    <a href="search_result.html?keyword=子供が喜ぶ">子供が喜ぶ</a>
+                                    <a href="search_result.html?keyword=節約">節約</a>
+                                </div>
+                            </section>
+                            <section class="sidemenus survey">
+                                <h2>このサイトへのご意見をお聞かせください</h2>
+                                <ul>
+                                    <li>
+                                        <label><input type="radio" name="survey_Radio" value="service" checked /> サービスへのご意見・ご要望</label>
+                                    </li>
+                                    <li>
+                                        <label><input type="radio" name="survey_Radio" value="system" /> 機能の不具合</label>
+                                    </li>
+                                    <li>
+                                        <label><input type="radio" name="survey_Radio" value="recipe" /> レシピで気づいた点の報告</label>
+                                    </li>
+                                </ul>
+                                <textarea name="survey_Details"></textarea>
+                                <button onclick="alert('井汲切れたため未実装')">意見を送る</button>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="overlay_Content">
+                        <div class="overlay_Menu_Btn_Outer">
+                            <input type="checkbox" id="menu_Toggle" name="menu_Toggle" />
+                            <label class="menu_Btn_Inner" for="menu_Toggle">
+                                <span>メニューバー</span>
+                                <span><i class="fa-solid fa-angles-left"></i></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div class="footer_Link">
+                    <ul>
+                        <li><a href="index.html">トップ</a></li>
+                        <li><a href="search_result.html">料理一覧</a></li>
+                        <li><a href="contact_form.html">お問い合わせ</a></li>
+                        <li><a href="site_details.html">サイト詳細</a></li>
+                    </ul>
+                </div>
+                <small>&copy; OIC 2022</small>
+            </footer>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>

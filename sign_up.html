@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="js/ncmb.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://apis.google.com/js/client.js?onload=ready"></script>
+        <script src="https://apis.google.com/js/api.js?onload=ready"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <title>今日なに食う？ / 新規登録</title>
+    </head>
+
+    <body id="sign-up-page">
+        <div class="container">
+            <header>
+                <h2 class="logo">
+                    <a href="index.html"><img src="images/logo.svg" alt="logo" /></a>
+                </h2>
+                <div class="header_Search_Container">
+                    <input type="search" placeholder="料理名・食材でレシピを探す" />
+                    <button class="search_Btn" id="search_Btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </header>
+            <main class="wrapper">
+                <div class="contents">
+                    <div class="main_Content">
+                        <section class="form_Box">
+                            <div class="form_Outer">
+                                <a href="index.html"><i class="fa-solid fa-arrow-left"></i> トップへ戻る</a>
+                                <div class="form_Bg">
+                                    <div class="formbg_Inner">
+                                        <h2>新規登録</h2>
+                                        <div class="field">
+                                            <label for="account_Id">アカウント名</label>
+                                            <input type="text" name="account_Id" id="account_Id" />
+                                        </div>
+                                        <div class="field">
+                                            <label for="mailAddress">メールアドレス</label>
+                                            <input type="text" name="mailAddress" id="mailAddress" />
+                                        </div>
+                                        <div class="field">
+                                            <label for="password">パスワード</label>
+                                            <input type="password" name="password" id="password" />
+                                        </div>
+                                        <div class="field">
+                                            <label for="password_Confirm">パスワード確認</label>
+                                            <input type="password" name="password_Confirm" id="password_Confirm" />
+                                        </div>
+                                        <div class="field_Checkbox">
+                                            <label for="passwordShow"><input type="checkbox" name="passwordShow_Sign-up" id="passwordShow" />パスワードを表示</label>
+                                        </div>
+                                        <p class="caution" id="errormsg"></p>
+                                        <div class="field">
+                                            <div class="form_Grid">
+                                                <a href="login.html">ログインへ</a>
+                                                <div class="sign-up_Btn">
+                                                    <button id="sign-up_Submit">登録</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <div class="section_Line"></div>
+                                            <h3>SNSアカウントで新規登録</h3>
+                                            <div class="sns_Linked_Auth">
+                                                <button id="facebook_Sign-up_Submit"><i class="fa-brands fa-square-facebook"></i>Facebook</button>
+                                                <button id="twitter_Sign-up_Submit"><i class="fa-brands fa-twitter"></i>Twitter</button>
+                                                <button id="google_Sign-up_Submit"><i class="fa-brands fa-google"></i>Google</button>
+                                                <button id="appleid_Sign-up_Submit"><i class="fa-brands fa-apple"></i>Apple ID</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div class="footer_Link">
+                    <ul>
+                        <li><a href="index.html">トップ</a></li>
+                        <li><a href="search_result.html">料理一覧</a></li>
+                        <li><a href="contact_form.html">お問い合わせ</a></li>
+                        <li><a href="site_details.html">サイト詳細</a></li>
+                    </ul>
+                </div>
+                <small>&copy; OIC 2022</small>
+            </footer>
+        </div>
+        <script src="js/main.js"></script>
+        <script src="js/login.js"></script>
+    </body>
+</html>

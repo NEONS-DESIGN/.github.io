@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja" name="main">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="text/javascript" src="/js/ncmb.min.js" charset="utf-8"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/main.css" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <title>今日なに食う？ / トップ</title>
+    </head>
+
+    <body id="top-page">
+        <div class="container">
+            <header>
+                <h2 class="logo">
+                    <a href="#"><img src="images/logo.svg" alt="logo" /></a>
+                </h2>
+                <div class="header_Search_Container">
+                    <input type="search" placeholder="料理名・食材でレシピを探す" />
+                    <button class="search_Btn" id="search_Btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="header-Menu">
+                    <label class="header-Link login_Btn"><a href="login.html" target="main">ログイン</a></label>
+                    <label class="header-Link sign_Up_Btn"><a href="sign_up.html" target="main">新規登録</a></label>
+                    <label class="header-Link mypage_Btn"><a href="mypage.html" target="main">マイページ</a></label>
+                    <label class="header-Link logout_Btn"><button id="logout_Submit" target="main">ログアウト</button></label>
+                </div>
+            </header>
+            <main class="wrapper">
+                <div class="contents">
+                    <div class="main_Content">
+                        <noscript><p>ご利用中のブラウザでは、JavaScriptが無効になっています。サイトをご利用の場合はブラウザ設定でJavaScriptを有効にしてご利用ください。</p></noscript>
+                        <section class="top_Banner_Outer">
+                            <ul class="slider">
+                                <li>
+                                    <a href="#" id="slider_img_1"><img src="/images/16x9.png" alt="料理画像" /></a>
+                                </li>
+                                <li>
+                                    <a href="#" id="slider_img_2"><img src="/images/16x9.png" alt="料理画像" /></a>
+                                </li>
+                                <li>
+                                    <a href="#" id="slider_img_3"><img src="/images/16x9.png" alt="料理画像" /></a>
+                                </li>
+                                <li>
+                                    <a href="#" id="slider_img_4"><img src="/images/16x9.png" alt="料理画像" /></a>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="top_Topic_Outer">
+                            <div class="topic_Grid">
+                                <div class="top_Ranking_Outer">
+                                    <h2>アクセス数ランキング</h2>
+                                    <ul class="top_Ranking_Innner" id="top_Ranking_List">
+                                        <li class="ranking top_Ranking_1" id="top_Ranking_1">
+                                            <div>1</div>
+                                            <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                        </li>
+                                        <li class="ranking top_Ranking_2" id="top_Ranking_2">
+                                            <div>2</div>
+                                            <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                        </li>
+                                        <li class="ranking top_Ranking_3" id="top_Ranking_3">
+                                            <div>3</div>
+                                            <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                        </li>
+                                    </ul>
+                                    <div class="ranking_All">
+                                        <a href="view-ranking.html"><i class="fa-solid fa-chevron-left"></i> アクセスランキングをすべて見る</a>
+                                    </div>
+                                </div>
+                                <div class="top_Review_Outer">
+                                    <h2>好評レシピ</h2>
+                                    <ul class="top_Review_Inner" id="top_Review_List">
+                                        <li class="review top_Review_1" id="top_Review_1">
+                                            <a href="#">
+                                                <img src="/images/1x1.png" alt="料理画像" />
+                                                <div></div>
+                                            </a>
+                                        </li>
+                                        <li class="review top_Review_2" id="top_Review_2">
+                                            <a href="#">
+                                                <img src="/images/1x1.png" alt="料理画像" />
+                                                <div></div>
+                                            </a>
+                                        </li>
+                                        <li class="review top_Review_3" id="top_Review_3">
+                                            <a href="#">
+                                                <img src="/images/1x1.png" alt="料理画像" />
+                                                <div></div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="section_Line"></div>
+                        <section class="top_Browsing_History_Outer">
+                            <h2>最近見たレシピ</h2>
+                            <ul class="top_Browsing_History_Inner" id="top_Browsing_History_List">
+                                <li class="history" id="browsing_History_1">
+                                    <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                </li>
+                                <li class="history" id="browsing_History_2">
+                                    <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                </li>
+                                <li class="history" id="browsing_History_3">
+                                    <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                </li>
+                                <li class="history" id="browsing_History_4">
+                                    <a href="#"><img src="/images/1x1.png" alt="料理画像" /></a>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <!-- <iframe src="/side-menu.html" class="side_Menu"></iframe> -->
+                    <div class="side_Content">
+                        <div class="side_Innner">
+                            <div class="responsive_Menu_Links">
+                                <label class="responsive_Menu_Link login_Btn"><a href="login.html">ログイン</a></label>
+                                <label class="responsive_Menu_Link sign_Up_Btn"><a href="sign_up.html">新規登録</a></label>
+                                <label class="responsive_Menu_Link mypage_Btn"><a href="mypage.html">マイページ</a></label>
+                                <label class="responsive_Menu_Link logout_Btn"><button>ログアウト</button></label>
+                            </div>
+                            <img src="/images/Banner.png" alt="サイドバナー" />
+                            <section class="sidemenus popular_Category">
+                                <h2>定番のキーワード</h2>
+                                <div class="category_List">
+                                    <a href="search_result.html?keyword=キャベツ">キャベツ</a>
+                                    <a href="search_result.html?keyword=大根">大根</a>
+                                    <a href="search_result.html?keyword=白菜">白菜</a>
+                                    <a href="search_result.html?keyword=じゃがいも">じゃがいも</a>
+                                    <a href="search_result.html?keyword=もやし">もやし</a>
+                                    <a href="search_result.html?keyword=豚肉">豚肉</a>
+                                    <a href="search_result.html?keyword=鶏肉">鶏肉</a>
+                                    <a href="search_result.html?keyword=和食">和食</a>
+                                    <a href="search_result.html?keyword=洋食">洋食</a>
+                                    <a href="search_result.html?keyword=中華料理">中華料理</a>
+                                </div>
+                            </section>
+                            <section class="sidemenus other_Category">
+                                <h2>その他のキーワード</h2>
+                                <div class="category_List">
+                                    <a href="search_result.html?keyword=時短">時短</a>
+                                    <a href="search_result.html?keyword=簡単">簡単</a>
+                                    <a href="search_result.html?keyword=料理の基本">料理の基本</a>
+                                    <a href="search_result.html?keyword=ヘルシー">ヘルシー</a>
+                                    <a href="search_result.html?keyword=子供が喜ぶ">子供が喜ぶ</a>
+                                    <a href="search_result.html?keyword=節約">節約</a>
+                                </div>
+                            </section>
+                            <section class="sidemenus survey">
+                                <h2>このサイトへのご意見をお聞かせください</h2>
+                                <ul>
+                                    <li>
+                                        <label><input type="radio" name="survey_Radio" value="service" checked /> サービスへのご意見・ご要望</label>
+                                    </li>
+                                    <li>
+                                        <label><input type="radio" name="survey_Radio" value="system" /> 機能の不具合</label>
+                                    </li>
+                                    <li>
+                                        <label><input type="radio" name="survey_Radio" value="recipe" /> レシピで気づいた点の報告</label>
+                                    </li>
+                                </ul>
+                                <textarea name="survey_Details"></textarea>
+                                <button onclick="alert('井汲切れたため未実装')">意見を送る</button>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="overlay_Content">
+                        <div class="overlay_Menu_Btn_Outer">
+                            <input type="checkbox" id="menu_Toggle" name="menu_Toggle" />
+                            <label class="menu_Btn_Inner" for="menu_Toggle">
+                                <span>メニューバー</span>
+                                <span><i class="fa-solid fa-angles-left"></i></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <iframe src="/footer.html" class="footer"></iframe>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>

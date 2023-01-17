@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="js/ncmb.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <title>今日なに食う？ / パスワードリセット</title>
+    </head>
+
+    <body id="confirm-page">
+        <div class="container">
+            <header>
+                <h2 class="logo">
+                    <a href="index.html"><img src="images/logo.svg" alt="logo" /></a>
+                </h2>
+                <div class="header_Search_Container">
+                    <input type="search" placeholder="料理名・食材でレシピを探す" />
+                    <button class="search_Btn" id="search_Btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </header>
+            <main class="wrapper">
+                <div class="contents">
+                    <div class="main_Content">
+                        <section class="form_Box">
+                            <div class="form_Outer">
+                                <a href="index.html"><i class="fa-solid fa-arrow-left"></i> トップへ戻る</a>
+                                <div class="form_Bg">
+                                    <div class="formbg_Inner">
+                                        <h2>パスワードリセット</h2>
+                                        <div class="psw_Reset_None">
+                                            <div class="field">
+                                                <label for="mailAddress">メールアドレス</label>
+                                                <input type="email" name="mailAddress" id="mailAddress" />
+                                            </div>
+                                            <p class="caution" id="errormsg">パスワードリセットをしたいアカウントの、メールアドレスを入力してください。</p>
+                                            <div class="field">
+                                                <div class="Btn_Outer">
+                                                    <button id="send_Mail_Btn">メールを送る</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="psw_Reset_Collect" style="display: none"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div class="footer_Link">
+                    <ul>
+                        <li><a href="index.html">トップ</a></li>
+                        <li><a href="search_result.html">料理一覧</a></li>
+                        <li><a href="contact_form.html">お問い合わせ</a></li>
+                        <li><a href="site_details.html">サイト詳細</a></li>
+                    </ul>
+                </div>
+                <small>&copy; OIC 2022</small>
+            </footer>
+        </div>
+        <script src="js/main.js"></script>
+        <script src="js/login.js"></script>
+    </body>
+</html>

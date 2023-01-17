@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="js/ncmb.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <title>今日なに食う？ / ユーザー名変更</title>
+    </head>
+
+    <body id="confirm-page">
+        <div class="container">
+            <header>
+                <h2 class="logo">
+                    <a href="index.html"><img src="images/logo.svg" alt="logo" /></a>
+                </h2>
+                <div class="header_Search_Container">
+                    <input type="search" placeholder="料理名・食材でレシピを探す" />
+                    <button class="search_Btn" id="search_Btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </header>
+            <main class="wrapper">
+                <div class="contents">
+                    <div class="main_Content">
+                        <section class="form_Box">
+                            <div class="form_Outer">
+                                <a href="index.html"><i class="fa-solid fa-arrow-left"></i> トップへ戻る</a>
+                                <div class="form_Bg">
+                                    <div class="formbg_Inner">
+                                        <h2>ユーザー名変更</h2>
+                                        <div class="logout_None">
+                                            <p>*ユーザー名を変更するには、一度再ログインして頂く必要があります。お手数ですが一度ログアウトボタンを押していただき、再度ログインしてください。</p>
+                                            <div class="logout_Submit">
+                                                <button id="name_Change_Logout_Submit">ログアウト</button>
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                        <div class="login_None" style="display: none">
+                                            <div class="field">
+                                                <label for="account_Id">アカウント名</label>
+                                                <input type="text" name="account_Id" id="account_Id" />
+                                            </div>
+                                            <div class="field">
+                                                <div class="form_Grid">
+                                                    <label for="password">パスワード</label>
+                                                    <div class="reset_Password">
+                                                        <a href="psw-reset-mail.html">パスワードを忘れましたか？</a>
+                                                    </div>
+                                                </div>
+                                                <input type="password" name="password" id="password" />
+                                            </div>
+                                            <div class="field_Checkbox">
+                                                <label for="passwordShow"><input type="checkbox" name="passwordShow_login" id="passwordShow" />パスワードを表示</label>
+                                            </div>
+                                            <div class="field">
+                                                <div class="login_Btn">
+                                                    <button id="name_Change_Login_Submit">ログイン</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="login_Collect" style="display: none">
+                                            <div class="field">
+                                                <label for="old_Account_Id">元のアカウント名</label>
+                                                <input type="text" name="account_Id" id="old_Account_Id" />
+                                            </div>
+                                            <div class="field">
+                                                <label for="new_Account_Id">新しいアカウント名</label>
+                                                <input type="text" name="account_Id" id="new_Account_Id" />
+                                            </div>
+                                            <div class="field">
+                                                <div class="Btn_Outer">
+                                                    <button id="change_Id_Btn">変更する</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="change_Collect" style="display: none">
+                                            <p>ユーザー名の変更が完了いたしました。 以下から新しいユーザー名でログインを行ってください。</p>
+                                            <a href="login.html">ログインへ</a>
+                                        </div>
+                                        <p class="caution" id="errormsg"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div class="footer_Link">
+                    <ul>
+                        <li><a href="index.html">トップ</a></li>
+                        <li><a href="search_result.html">料理一覧</a></li>
+                        <li><a href="contact_form.html">お問い合わせ</a></li>
+                        <li><a href="site_details.html">サイト詳細</a></li>
+                    </ul>
+                </div>
+                <small>&copy; OIC 2022</small>
+            </footer>
+        </div>
+        <script src="js/main.js"></script>
+        <script src="js/login.js"></script>
+    </body>
+</html>
