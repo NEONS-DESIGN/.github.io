@@ -1,0 +1,35 @@
+RewriteEngine on
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$ https://www.neonsdesign.com/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1\.html [R=301,L]
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^neonsdesign\.com$
+RewriteRule ^(.*)$ https://www.neonsdesign.com/$1 [R=301,L]
+
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+
+SetEnvIfNoCase Request_URI \.(?:gif|jpg|png|webp|ico|mp4)$ no-gzip dont-vary
+
+<ifModule mod_deflate.c>
+<IfModule mod_filter.c>
+AddOutputFilterByType DEFLATE text/html text/xml text/css text/plain
+AddOutputFilterByType DEFLATE image/svg+xml application/xhtml+xml application/xml
+AddOutputFilterByType DEFLATE application/rdf+xml application/rss+xml application/atom+xml
+AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript application/json
+AddOutputFilterByType DEFLATE application/x-httpd-php application/x-httpd-fastphp
+AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-otf
+AddOutputFilterByType DEFLATE font/truetype font/opentype
+</IfModule>
+</ifModule>
+
+ErrorDocument 401 /401.html
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
