@@ -10,6 +10,7 @@ let Favorite = ncmb.DataStore("Favorite")
 
 let url = new URL(window.location.href);
 
+// v1
 
 $(".logout_Btn").find("button").click(function () {
     ncmb.User.getCurrentUser();
