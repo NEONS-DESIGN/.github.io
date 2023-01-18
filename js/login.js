@@ -39,13 +39,10 @@ $("#sign-up_Submit").click(function () {
             .signUpByAccount()
 
             .then(function (user) {
-                console.log("新規ユーザー登録成功");
-                window.location.href = "./mypage.html";
+                // console.log("ログイン成功: " + JSON.stringify(user));
+                window.location.href = "login.html";
+                alert("お客様のメールアドレス宛に、確認メールを送付させていただきました。\nご確認ください。");
                 // return ncmb.User.login(user);
-            })
-            .then(function (user) {
-                console.log("ログイン成功: " + JSON.stringify(user));
-                window.location.href = "./mypage.html";
             })
             .catch(function (error) {
                 console.log("認証処理失敗: : " + error + ", " + JSON.stringify(error));

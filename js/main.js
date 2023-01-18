@@ -7,10 +7,30 @@ let Hist = ncmb.DataStore("History");
 let Food = ncmb.DataStore("Food");
 let Genre = ncmb.DataStore("Genre");
 let Favorite = ncmb.DataStore("Favorite")
+let Enquete = ncmb.DataStore("Enquete");
 
 let url = new URL(window.location.href);
 
-// v1
+$("#enquete_Btn").click(function() {
+    let reason = $('input[name="survey_Radio"]').val();
+    let message = $('textarea[name="survey_Details"]').val();
+
+    if (reason !== "" && message !== "") { //入力チェック
+        let enquete = new Enquete();
+        enquete.set("reason", reason) //理由
+            .set("message", message) //内容
+            .save()
+            .then(function () {
+                alert("お問い合わせを受けつました。\nご協力ありがとうございます。");
+            })
+            .catch(function (error) {
+                console.log("エラー: " + error + ", " + JSON.stringify(error));
+                alert("送信に失敗しました。もう一度お試しください。");
+            })
+    } else {
+        alert("必要項目が入力されていません。");
+    }
+});
 
 $(".logout_Btn").find("button").click(function () {
     ncmb.User.getCurrentUser();
@@ -494,9 +514,17 @@ function loadRecipe() {
 
                     let amount = ingredient.amount * num;
                     let unit = ingredient.unit;
-                    if (unit == "大さじ" || unit == "小さじ") {
+                    if (unit == "大さじ") {
                         html_amounts += unit + amount + "\n";
-                    } else if (unit == "g" || unit == "ml") {
+                    } else if (unit == "小さじ") {
+                        if (amount >= 3) {
+                            let spoon = amount / 3;
+                            amount = amount % 3;
+                            html_amounts += "大さじ" + spoon + " 小さじ" + amount;
+                        } else {
+                            html_amounts += unit + amount + "\n";
+                        }
+                    } else if (unit == "g" || unit == "ml" || unit == "個" || unit == "本") {
                         html_amounts += amount + unit + "\n";
                     } else if (unit == "少々") {
                         html_amounts += unit + "\n";
@@ -516,9 +544,17 @@ function loadRecipe() {
 
                     let amount = seasoning.amount * num;
                     let unit = seasoning.unit;
-                    if (unit == "大さじ" || unit == "小さじ") {
+                    if (unit == "大さじ") {
                         html_amounts += unit + amount + "\n";
-                    } else if (unit == "g" || unit == "ml") {
+                    } else if (unit == "小さじ") {
+                        if (amount >= 3) {
+                            let spoon = Math.floor(amount / 3);
+                            amount = amount % 3;
+                            html_amounts += "大さじ" + spoon + "/小さじ" + amount+"\n";
+                        } else {
+                            html_amounts += unit + amount + "\n";
+                        }
+                    } else if (unit == "g" || unit == "ml" || unit == "個" || unit == "本") {
                         html_amounts += amount + unit + "\n";
                     } else if (unit == "少々") {
                         html_amounts += unit + "\n";

@@ -116,6 +116,7 @@
                             </ul>
                         </section>
                     </div>
+                    <!-- <iframe src="/side-menu.html" class="side_Menu"></iframe> -->
                     <div class="side_Content">
                         <div class="side_Innner">
                             <div class="responsive_Menu_Links">
@@ -128,16 +129,11 @@
                             <section class="sidemenus popular_Category">
                                 <h2>定番のキーワード</h2>
                                 <div class="category_List">
-                                    <a href="search_result.html?keyword=キャベツ">キャベツ</a>
-                                    <a href="search_result.html?keyword=大根">大根</a>
-                                    <a href="search_result.html?keyword=白菜">白菜</a>
-                                    <a href="search_result.html?keyword=じゃがいも">じゃがいも</a>
-                                    <a href="search_result.html?keyword=もやし">もやし</a>
-                                    <a href="search_result.html?keyword=豚肉">豚肉</a>
-                                    <a href="search_result.html?keyword=鶏肉">鶏肉</a>
                                     <a href="search_result.html?keyword=和食">和食</a>
                                     <a href="search_result.html?keyword=洋食">洋食</a>
                                     <a href="search_result.html?keyword=中華料理">中華料理</a>
+                                    <a href="search_result.html?keyword=ジャンクフード">ジャンクフード</a>
+                                    <a href="search_result.html?keyword=B級料理">B級料理</a>
                                 </div>
                             </section>
                             <section class="sidemenus other_Category">
@@ -165,7 +161,7 @@
                                     </li>
                                 </ul>
                                 <textarea name="survey_Details"></textarea>
-                                <button onclick="alert('井汲切れたため未実装')">意見を送る</button>
+                                <button id="enquete_Btn">意見を送る</button>
                             </section>
                         </div>
                     </div>
@@ -180,7 +176,18 @@
                     </div>
                 </div>
             </main>
-            <iframe src="footer.html" class="footer"></iframe>
+            <!-- <iframe src="/footer.html" class="footer"></iframe> -->
+            <footer>
+                <div class="footer_Link">
+                    <ul>
+                        <li><a href="index.html" target="main">トップ</a></li>
+                        <li><a href="search_result.html" target="main">料理一覧</a></li>
+                        <li><a href="contact_form.html" target="main">お問い合わせ</a></li>
+                        <li><a href="site_details.html" target="main">サイト詳細</a></li>
+                    </ul>
+                </div>
+                <small>&copy; OIC 2022</small>
+            </footer>
         </div>
         <script src="js/main.js"></script>
     </body>
