@@ -20,7 +20,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    cursor: url(/cursor/miku\ default.cur), default;
+    /* cursor: url(/cursor/miku\ default.cur), default; */
     font-family: "Kaisei Opti", serif;
     scrollbar-color: var(--main_Color) #ccc;
     scrollbar-width: thin;
@@ -47,7 +47,7 @@ body {
 a {
     color: var(--main_Color);
     text-decoration: none;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
 }
 
 .container {
@@ -99,7 +99,7 @@ a {
 
     a img:hover {
         filter: brightness(1.25);
-        cursor: var(--cursor_pointer);
+        cursor: pointer;
     }
 }
 @media (max-width: 1010px) {
@@ -109,7 +109,7 @@ a {
 
     a img:active {
         filter: brightness(1.25);
-        cursor: var(--cursor_pointer);
+        cursor: pointer;
     }
 }
 
@@ -143,7 +143,7 @@ header .logo {
     text-transform: uppercase;
     color: var(--main_Color);
     display: inline-block;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
 }
 header .logo a {
     display: block;
@@ -177,7 +177,7 @@ header .header_Search_Container input[type="search"]:focus {
     outline: none;
 }
 header .header_Search_Container button {
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
     border: none;
     background: var(--main_Color);
     color: #fff;
@@ -190,7 +190,7 @@ header .header_Search_Container button {
     transition: var(--transition);
 }
 header .header_Search_Container button i {
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
 }
 header .header-Menu {
     width: 300px;
@@ -220,7 +220,7 @@ header .header-Menu label button {
     border: #ccc solid 1px;
     color: #666;
     font-size: medium;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
     transition: var(--transition);
 }
 header .header-Menu label a:hover {
@@ -366,7 +366,7 @@ main .side_Content .survey ul li {
 }
 main .side_Content .survey ul li label,
 main .side_Content .survey ul li input[type="radio"] {
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
 }
 main .side_Content .survey ul li input[type="radio"] {
     accent-color: var(--main_Color);
@@ -393,7 +393,7 @@ main .side_Content .survey button {
     border: none;
     color: var(--main_Color);
     font-size: 0.9em;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
 }
 main .side_Content .survey button:hover {
     background-color: var(--main_Color);
@@ -448,7 +448,7 @@ main .side_Content .survey button:hover {
         border-radius: 5px;
         color: var(--main_Color);
         font-size: medium;
-        cursor: var(--cursor_pointer);
+        cursor: pointer;
         transition: var(--transition);
     }
     main .side_Content .responsive_Menu_Links label a:hover {
@@ -499,7 +499,7 @@ main .overlay_Content .overlay_Menu_Btn_Outer label span {
     align-items: center;
     justify-content: center;
     writing-mode: vertical-rl;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
 }
 main .overlay_Content .overlay_Menu_Btn_Outer label span:last-child {
     position: absolute;
@@ -621,7 +621,7 @@ input[type="number"] {
     z-index: 100;
     position: absolute;
     top: 42%;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
     outline: none;
     border-top: 8px solid var(--main_Color);
     border-right: 8px solid var(--main_Color);
@@ -694,7 +694,7 @@ input[type="number"] {
     text-decoration: none;
     border: #888 solid 2px;
     background-color: #fff;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
     transition: cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
 }
 #top-page .top_Ranking_Innner {
@@ -756,7 +756,7 @@ input[type="number"] {
     margin-right: 5px;
 }
 #top-page .review div {
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
 }
 #top-page .categorys {
     margin-top: 10px;
@@ -855,7 +855,7 @@ input[type="number"] {
 #search-result-page main .search_Filter button {
     padding: 5px 10px;
     border: none;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
     background-color: #eee;
     color: var(--main_Color);
     border-radius: 5px;
@@ -1093,7 +1093,7 @@ input[type="number"] {
     background-color: var(--main_Color);
     border: unset;
     border-radius: 5px;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
     transition: var(--transition);
 }
 #login-page .form_Grid,
@@ -1147,7 +1147,7 @@ input[type="number"] {
 #login-page .sns_Linked_Auth button i,
 #sign-up-page .sns_Linked_Auth button i {
     margin-right: 10px;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
 }
 #login-page .sns_Linked_Auth #facebook_Login_Submit,
 #sign-up-page .sns_Linked_Auth #facebook_Sign-up_Submit {
@@ -1289,7 +1289,7 @@ input[type="number"] {
 #view-ranking-page main .ranking_Filter button {
     padding: 5px 10px;
     border: none;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
     background-color: #eee;
     color: var(--main_Color);
     border-radius: 5px;
@@ -1448,7 +1448,7 @@ input[type="number"] {
     border-width: 0 1px 0 0;
     padding: 10px 15px;
     font-weight: 900;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
     transition: var(--transition);
 }
 #my-page #top_Tab:checked ~ .tab_Btn label[for="top_Tab"],
@@ -1590,7 +1590,7 @@ input[type="number"] {
     background-color: transparent;
     border: none;
     color: var(--main_Color);
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
     font-size: medium;
 }
 #my-page #setting .sns_Linked_Outer {
@@ -1623,7 +1623,7 @@ input[type="number"] {
 }
 #my-page .sns_Links button i {
     margin-right: 10px;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
 }
 #my-page .sns_Links #facebook_Link_Submit {
     color: #375696;
@@ -1782,7 +1782,7 @@ input[type="number"] {
     border: #ccc solid 1px;
     color: #666;
     font-size: medium;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
     transition: var(--transition);
 }
 #confirm-page .formbg_Inner h2 {
@@ -1821,7 +1821,7 @@ input[type="number"] {
     background-color: var(--main_Color);
     border: unset;
     border-radius: 5px;
-    cursor: var(--cursor_pointer);
+    cursor: pointer;
     transition: var(--transition);
 }
 #confirm-page .field .reset_Password {
